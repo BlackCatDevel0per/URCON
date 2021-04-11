@@ -1,6 +1,8 @@
 # URCON English
 Simple GUI rcon client for Minecraft servers!
 
+<img src="Screenshots/main.png" />
+
 This program uses the python module https://github.com/conqp/rcon
 
 run from source with python3 urcon.py
