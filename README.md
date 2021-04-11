@@ -9,14 +9,14 @@
   <summary>Подробнее</summary>
   <ol>
     <li>
-      <a href="#about-urcon-rus">О программе URCON</a>
+      <a href="#о-программе-urcon">О программе URCON</a>
       <ul>
-        <li><a href="#run-with-rus">Запуск из исходников</a></li>
+        <li><a href="#запуск-из-исходников">Запуск из исходников</a></li>
       </ul>
     </li>
-    <li><a href="#errors-rus">Нашли ошибку?</a></li>
-    <li><a href="#license-rus">Лицензия</a></li>
-    <li><a href="#contact-rus">Обратная связь</a></li>
+    <li><a href="#нашли-ошибку?">Нашли ошибку?</a></li>
+    <li><a href="#лицензия">Лицензия</a></li>
+    <li><a href="#обратная-связь">Обратная связь</a></li>
   </ol>
 </details>
 
@@ -27,10 +27,10 @@
     <li>
       <a href="#about-urcon">About URCON</a>
       <ul>
-        <li><a href="#run-with">Run from source</a></li>
+        <li><a href="#run-from-source">Run from source</a></li>
       </ul>
     </li>
-    <li><a href="#errors">Find errors?</a></li>
+    <li><a href="#find-errors?">Find errors?</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
