@@ -1,0 +1,5 @@
+logger
+logzero
+requests
+pyqt5 
+configparser
