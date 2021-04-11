@@ -1,41 +1,3 @@
-[![Apache 2.0 License][license-shield]][license-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Forks][forks-shield]][forks-url]
-
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Подробнее</summary>
-  <ol>
-    <li>
-      <a href="#о-программе-urcon">О программе URCON</a>
-      <ul>
-        <li><a href="#запуск-из-исходников">Запуск из исходников</a></li>
-      </ul>
-    </li>
-    <li><a href="#нашли-ошибку?">Нашли ошибку?</a></li>
-    <li><a href="#лицензия">Лицензия</a></li>
-    <li><a href="#обратная-связь">Обратная связь</a></li>
-  </ol>
-</details>
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>About</summary>
-  <ol>
-    <li>
-      <a href="#about-urcon">About URCON</a>
-      <ul>
-        <li><a href="#run-from-source">Run from source</a></li>
-      </ul>
-    </li>
-    <li><a href="#find-errors?">Find errors?</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
 ## О программе URCON
 Простой графический клиент rcon для серверов Minecraft!
 
@@ -47,15 +9,6 @@
 
 ## Запуск из исходников
 запуск из исходного кода с помощью python3 urcon.py
-
-## Нашли ошибку?
-...
-
-## Лицензия
-...
-
-## Обратная связь
-BlackCatDev - 333blackcat333@mail.ru
 
 
 ## About URCON
@@ -69,12 +22,3 @@ This program uses the python module https://github.com/conqp/rcon
 
 ## Run from source
 run from source with python3 urcon.py
-
-## Find errors?
-Open issue
-
-## License
-Distributed under the Apache 2.0 License. See `LICENSE` for more information.
-
-## Contact
-BlackCatDev - 333blackcat333@mail.ru
