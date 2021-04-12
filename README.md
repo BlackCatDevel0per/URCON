@@ -1,6 +1,6 @@
 ![AUR license](https://img.shields.io/badge/license-Apache-orange)
 
-## Оглавление
+## Вступление
 - [О программе URCON](#О-программе-URCON)
 - [Запуск из исходников](#Запуск-из-исходников)
 - [Скриншоты](#Скриншоты)
@@ -13,7 +13,7 @@
 ## Запуск из исходников
 Запуск из исходного кода с помощью python3 urcon.py
 
-## Contents
+## Introduction
 - [About URCON](#About-URCON)
 - [Run from source](#Run-from-source)
 - [Screenshots](#Скриншоты)
