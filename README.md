@@ -11,11 +11,11 @@
 [Screenshots](#Скриншоты)
 
 # Скриншоты
-____
+
 <img src="Screenshots/connect.png" align="center" />
 <img src="Screenshots/about.png" align="center" />
 <img src="Screenshots/main.png" align="center" />
-____
+
 ## О программе URCON
 Простой графический клиент rcon для серверов Minecraft!
 
