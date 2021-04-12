@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Connect</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../images/main_icon.ico</normaloff>../images/main_icon.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">

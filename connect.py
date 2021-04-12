@@ -1,7 +1,6 @@
 import os, sys
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QMainWindow, QFileDialog, QLineEdit)
 
 import about
@@ -15,8 +14,6 @@ class Connect(QMainWindow):
 	def __init__(self):
 		super(Connect, self).__init__()
 		uic.loadUi('src/windows/connect.ui', self)
-
-		self.setWindowIcon(QIcon('src/images/main_icon.ico'))
 
 		self.pushButton.clicked.connect(self.ConnectConfig)
 
@@ -47,8 +44,6 @@ class Connect(QMainWindow):
 	def About(self):
 
 		self.aboutwin.show()
-
-		self.aboutwin.setWindowIcon(QIcon('src/images/main_icon.ico'))
 
 	def openlogsdir(self):
 

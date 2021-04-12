@@ -1,6 +1,5 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import (QMainWindow, QApplication)
 
 from logzero import logger, logfile # Логирование
@@ -28,8 +27,8 @@ class URCON(QMainWindow):
 		uic.loadUi('src/windows/main.ui', self)
 		self.show()
 
-		self.setWindowIcon(QIcon('src/images/main_icon.ico')) # Установить иконку главного окна
-###
+
+		
 		self.pushButton.clicked.connect(self.Send) # Действие при нажатии на кнопку SEND
 
 		self.pushButton.setShortcut("Enter") # Действие при нажатии на Enter
