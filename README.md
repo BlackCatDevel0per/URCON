@@ -1,9 +1,23 @@
-## О программе URCON
-Простой графический клиент rcon для серверов Minecraft!
+![AUR license](https://img.shields.io/badge/license-Apache-orange)
 
+## Оглавление
+
+[О программе URCON](#О-программе-URCON)
+[Запуск из исходников](#Запуск-из-исходников)
+[Скриншоты](#Скриншоты)
+
+[About URCON](#About-URCON)
+[Run from source](#Run-from-source)
+[Screenshots](#Скриншоты)
+
+# Скриншоты
+```
 <img src="Screenshots/connect.png" align="center" />
 <img src="Screenshots/about.png" align="center" />
 <img src="Screenshots/main.png" align="center" />
+```
+## О программе URCON
+Простой графический клиент rcon для серверов Minecraft!
 
 Эта программа использует модуль python https://github.com/conqp/rcon
 
@@ -13,10 +27,6 @@
 
 ## About URCON
 Simple GUI rcon client for Minecraft servers!
-
-<img src="Screenshots/connect.png" align="center" />
-<img src="Screenshots/about.png" align="center" />
-<img src="Screenshots/main.png" align="center" />
 
 This program uses the python module https://github.com/conqp/rcon
 
