@@ -11,7 +11,7 @@
 Эта программа использует модуль python https://github.com/conqp/rcon
 
 ## Запуск из исходников
-запуск из исходного кода с помощью python3 urcon.py
+Запуск из исходного кода с помощью python3 urcon.py
 
 ## Contents
 - [About URCON](#About-URCON)
@@ -24,7 +24,7 @@ Simple GUI rcon client for Minecraft servers!
 This program uses the python module https://github.com/conqp/rcon
 
 ## Run from source
-run from source with python3 urcon.py
+Run from source with python3 urcon.py
 
 # Скриншоты
 
