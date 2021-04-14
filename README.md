@@ -11,7 +11,7 @@ Universal rcon client
 Простой графический rcon клиент для серверов Minecraft!
 
 Эта программа использует модуль python https://github.com/conqp/rcon
-
+#
 ## [Релизы](https://github.com/BlackCatDevel0per/URCON/releases)
 
 ## Запуск из исходников
