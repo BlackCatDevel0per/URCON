@@ -29,6 +29,9 @@
    <iconset>
     <normaloff>../images/main_icon.ico</normaloff>../images/main_icon.ico</iconset>
   </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
@@ -52,8 +55,13 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>SEND</string>
+     <string>Отправить</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textbrowser">
@@ -106,6 +114,16 @@
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionEN">
+   <property name="text">
+    <string>EN</string>
+   </property>
+  </action>
+  <action name="actionRU">
+   <property name="text">
+    <string>RU</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -29,6 +29,9 @@
    <iconset>
     <normaloff>../images/main_icon.ico</normaloff>../images/main_icon.ico</iconset>
   </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
@@ -102,7 +105,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Port</string>
+     <string>Порт</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -120,7 +123,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Password</string>
+     <string>Пароль</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -138,7 +141,7 @@
      </font>
     </property>
     <property name="text">
-     <string>OK</string>
+     <string>ОК</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="checkBox">
@@ -146,7 +149,7 @@
      <rect>
       <x>10</x>
       <y>130</y>
-      <width>141</width>
+      <width>121</width>
       <height>22</height>
      </rect>
     </property>

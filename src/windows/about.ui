@@ -28,11 +28,14 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>About App</string>
+   <string>О программе</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>../images/main_icon.ico</normaloff>../images/main_icon.ico</iconset>
+  </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
   </property>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -85,7 +88,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Разработчик BlackCatDev</string>
+    <string>Разработчик: BlackCatDev</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -124,7 +127,7 @@
     <rect>
      <x>10</x>
      <y>370</y>
-     <width>191</width>
+     <width>161</width>
      <height>20</height>
     </rect>
    </property>
@@ -134,7 +137,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Иконка приложения взята от &lt;a href=&quot;https://www.hiclipart.com&quot;&gt;hiclipart.com&lt;/a&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Иконка программы от &lt;a href=&quot;https://www.hiclipart.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;hiclipart.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -152,7 +155,7 @@
     </font>
    </property>
    <property name="text">
-    <string>&lt;a href=&quot;mailto:333blackcat333@mail.ru&quot;&gt;Нашли ошибки?&lt;/a&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;mailto:333blackcat333@mail.ru&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Нашли ошибки?&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
