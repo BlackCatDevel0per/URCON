@@ -40,7 +40,7 @@ def CheckSettings():
 
 		text_file.write("[SETTINGS]")
 
-		text_file.write("\nlogs = False")
+		text_file.write("\nlogs = False") # logs
 
 		conf.close()
 

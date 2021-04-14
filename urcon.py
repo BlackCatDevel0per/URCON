@@ -27,11 +27,15 @@ class URCON(QMainWindow):
 		uic.loadUi('src/windows/main.ui', self)
 		self.show()
 
-
+		translator = QTranslator()
+		translator.load("en_ru.qm", "src/windows/")
+		QApplication.installTranslator(translator)
 		
 		self.pushButton.clicked.connect(self.Send) # Действие при нажатии на кнопку SEND
 
 		self.pushButton.setShortcut("Enter") # Действие при нажатии на Enter
+
+		self.lineEdit.returnPressed.connect(self.Send) # Действие при нажатии на Enter
 
 		self.toolButton.clicked.connect(self.ConUi) # Открытие нового окна
 
@@ -39,7 +43,7 @@ class URCON(QMainWindow):
 
 		self.conwin = conctwin.Connect() # Окно соеденения
 
-		self.myclose = False
+		self.switch_lang() # Смена языка
 
 		self.Stop()
 
@@ -116,5 +120,5 @@ def main():
 	app = QApplication(sys.argv)
 	window = URCON()
 	app.exec_()
-	
+
 main()
