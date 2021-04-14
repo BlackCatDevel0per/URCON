@@ -26,10 +26,6 @@ class URCON(QMainWindow):
 		super(URCON, self).__init__()
 		uic.loadUi('src/windows/main.ui', self)
 		self.show()
-
-		translator = QTranslator()
-		translator.load("en_ru.qm", "src/windows/")
-		QApplication.installTranslator(translator)
 		
 		self.pushButton.clicked.connect(self.Send) # Действие при нажатии на кнопку SEND
 
@@ -42,8 +38,6 @@ class URCON(QMainWindow):
 		self.log()
 
 		self.conwin = conctwin.Connect() # Окно соеденения
-
-		self.switch_lang() # Смена языка
 
 		self.Stop()
 
