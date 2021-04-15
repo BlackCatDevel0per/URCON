@@ -1,5 +1,7 @@
 ![AUR license](https://shields.io/badge/license-Apache--2.0-orange?style=for-the-badge)
 ![GitHub all releases](https://img.shields.io/github/downloads/BlackCatDevel0per/URCON/total?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues-raw/BlackCatDevel0per/URCON?color=red&style=for-the-badge)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/BlackCatDevel0per/URCON?style=for-the-badge)
 
 ## Вступление
 - [О программе URCON](#О-программе-URCON)
