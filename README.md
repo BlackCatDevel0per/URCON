@@ -1,4 +1,4 @@
-![AUR license](https://img.shields.io/badge/license-Apache-orange)
+![AUR license](https://shields.io/badge/license-Apache--2.0-orange)
 
 ## Вступление
 - [О программе URCON](#О-программе-URCON)
