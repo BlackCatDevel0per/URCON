@@ -57,5 +57,15 @@ def CheckAll():
 	CheckConf()
 	CheckSettings()
 	CheckLogsDir()
-
-CheckAll()
+# Проверка OS
+try:
+	CheckAll()
+except:
+	if os.name == 'posix':
+		path = 'NoneDir' # Пока нет
+		os.chdir(path)
+	if os.name == 'nt':
+		pf = 'C://Program Files (x86)/'
+		path = 'URCON/'
+		os.chdir(pf + path)
+		CheckAll()
