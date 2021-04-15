@@ -1,4 +1,4 @@
-![AUR license](https://shields.io/badge/license-Apache--2.0-orange)
+![AUR license](https://shields.io/badge/license-Apache--2.0-orange?style=for-the-badge)
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/BlackCatDevel0per/URCON/latest/total?style=for-the-badge)
 
 ## Вступление
