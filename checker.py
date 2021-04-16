@@ -62,10 +62,9 @@ try:
 	CheckAll()
 except:
 	if os.name == 'posix':
-		path = 'NoneDir' # Пока нет
-		os.chdir(path)
+		pass
 	if os.name == 'nt':
 		pf = 'C://Program Files (x86)/'
-		path = 'URCON/'
-		os.chdir(pf + path)
+		apppath = 'URCON/'
+		os.chdir(pf + apppath)
 		CheckAll()
