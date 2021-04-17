@@ -11,7 +11,7 @@
 
 ## О программе URCON
 Universal rcon client
-Простой графический (GUI) rcon клиент для серверов Minecraft!
+Простой графический (GUI) rcon клиент для серверов Minecraft BE/PE!
 #
 Проверен на серверах:
 - Altay
