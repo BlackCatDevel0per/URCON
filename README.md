@@ -11,7 +11,7 @@
 
 ## О программе URCON
 Universal rcon client
-Простой графический rcon клиент для серверов Minecraft!
+Простой графический (GUI) rcon клиент для серверов Minecraft!
 
 Эта программа использует модуль python https://github.com/conqp/rcon
 #
