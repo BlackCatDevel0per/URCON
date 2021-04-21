@@ -10,18 +10,6 @@
     <height>597</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>799</width>
-    <height>597</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>799</width>
-    <height>597</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>RCON</string>
   </property>
@@ -33,75 +21,34 @@
    <locale language="Russian" country="Russia"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>500</y>
-      <width>681</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>IBeamCursor</cursorShape>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>500</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>9</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Отправить</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="textbrowser">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>10</y>
-      <width>781</width>
-      <height>471</height>
-     </rect>
-    </property>
-    <property name="cursor" stdset="0">
-     <cursorShape>IBeamCursor</cursorShape>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="toolButton">
-    <property name="geometry">
-     <rect>
-      <x>730</x>
-      <y>20</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255, 10%);</string>
-    </property>
-    <property name="text">
-     <string>...</string>
-    </property>
-    <property name="autoRaise">
-     <bool>false</bool>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QTextBrowser" name="textbrowser">
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Отправить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -112,16 +59,18 @@
      <height>34</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menurcon">
+    <property name="title">
+     <string>rcon</string>
+    </property>
+    <addaction name="connectui"/>
+   </widget>
+   <addaction name="menurcon"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionEN">
+  <action name="connectui">
    <property name="text">
-    <string>EN</string>
-   </property>
-  </action>
-  <action name="actionRU">
-   <property name="text">
-    <string>RU</string>
+    <string>Подключиться</string>
    </property>
   </action>
  </widget>

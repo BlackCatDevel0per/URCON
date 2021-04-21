@@ -33,7 +33,7 @@ class URCON(QMainWindow):
 
 		self.lineEdit.returnPressed.connect(self.Send) # Действие при нажатии на Enter
 
-		self.toolButton.clicked.connect(self.ConUi) # Открытие нового окна
+		self.connectui.triggered.connect(self.ConUi) # Открытие нового окна
 
 		self.log()
 
