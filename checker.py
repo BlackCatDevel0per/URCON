@@ -2,19 +2,19 @@ import os
 
 def CheckAppDataDir():
 
-	if os.path.exists("src") == False: # Ошибка при отцутствии ресурсов программы
+	if not os.path.exists("src"): # Ошибка при отцутствии ресурсов программы
 
-		pass
+		print("Error! NO /src!!!")
 
 def CheckDataDir():
 
-	if os.path.exists("src/data") == False:
+	if not os.path.exists("src/data"):
 
 		os.mkdir("src/data")
 
 def CheckConf():
 
-	if os.path.isfile("src/data/config.ini") == False:
+	if not os.path.isfile("src/data/config.ini"):
 
 		sip = "0.0.0.0"
 		sprt = "19132"
@@ -32,21 +32,29 @@ def CheckConf():
 
 		conf.close()
 
+def CheckLanguageFile():
+	if not os.path.isfile("src/languages/en_us.ini"):
+		print("Language file not found")
+
 def CheckSettings():
 
-	if os.path.isfile("src/data/settings.ini") == False:
+	if not os.path.isfile("src/data/settings.ini"):
 
 		conf = text_file = open("src/data/settings.ini", "w")
 
 		text_file.write("[SETTINGS]")
 
+		text_file.write("appversion = VERSION =)") # app version
+
 		text_file.write("\nlogs = False") # logs
+
+		text_file.write("\nlang = en_us") # language
 
 		conf.close()
 
 def CheckLogsDir():
 
-	if os.path.exists("logs") == False:
+	if not os.path.exists("logs"):
 
 		os.mkdir("logs")
 
@@ -55,6 +63,7 @@ def CheckAll():
 	CheckAppDataDir()
 	CheckDataDir()
 	CheckConf()
+	CheckLanguageFile()
 	CheckSettings()
 	CheckLogsDir()
 # Проверка OS

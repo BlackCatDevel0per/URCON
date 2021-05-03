@@ -1,4 +1,4 @@
-import os, sys
+import configparser, os, sys
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QMainWindow, QFileDialog, QLineEdit)
@@ -14,6 +14,9 @@ class Connect(QMainWindow):
 	def __init__(self):
 		super(Connect, self).__init__()
 		uic.loadUi('src/windows/connect.ui', self)
+
+		from setlang import SetConnectWindowLang
+		SetConnectWindowLang(self)
 
 		self.pushButton.clicked.connect(self.ConnectConfig)
 
@@ -56,43 +59,38 @@ class Connect(QMainWindow):
 
 	def ConnectConfig(self):
 
+		config1 = configparser.ConfigParser()
+
 		ip = self.lineEdit.text() # input cmd from text label
 
 		prt = self.lineEdit_2.text() # input cmd from text label
 
 		pswd = self.lineEdit_3.text() # input cmd from text label
 
-		# создать новый текстовый файл
-		conf = text_file = open("src/data/config.ini", "w")
-		# запить текста в этот файл
-
-		text_file.write("[DATA]")
-
-		text_file.write("\nip = " + ip )
-
-		text_file.write("\nprt = " + prt)
-
-		text_file.write("\npswd = " + pswd )
-
-		conf.close()
+		conf1 = "src/data/config.ini"
+		config1.read(conf1)
+		config1.set("DATA", "ip", ip)
+		config1.set("DATA", "prt", prt)
+		config1.set("DATA", "pswd", pswd)
+		config1.write(open(conf1, "w"))
 
 	def Settings(self, toggle):
 
-		settings = text_file = open("src/data/settings.ini", "w")
+		config2 = configparser.ConfigParser()
 
-		if toggle == Qt.Checked:
+		if toggle == Qt.Checked: # Turn on rcon logs
 
-			text_file.write("[SETTINGS]")
+			conf2 = "src/data/settings.ini"
+			config2.read(conf2)
+			config2.set("SETTINGS", "logs", "True")
+			config2.write(open(conf2, "w"))
 
-			text_file.write("\nlogs = True") # Turn on rcon logs True or False
+		else: # Turn off rcon logs
 
-		else:
-
-			text_file.write("[SETTINGS]")
-
-			text_file.write("\nlogs = False") # Turn on rcon logs True or False
-
-		settings.close()
+			conf2 = "src/data/settings.ini"
+			config2.read(conf2)
+			config2.set("SETTINGS", "logs", "False")
+			config2.write(open(conf2, "w"))
 
 	def closewin(self):
 
