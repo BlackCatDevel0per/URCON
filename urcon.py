@@ -26,6 +26,9 @@ class URCON(QMainWindow):
 		super(URCON, self).__init__()
 		uic.loadUi('src/windows/main.ui', self)
 		self.show()
+
+		from setlang import SetMainWindowLang
+		SetMainWindowLang(self) # Изменение языка
 		
 		self.pushButton.clicked.connect(self.Send) # Действие при нажатии на кнопку SEND
 
@@ -35,9 +38,11 @@ class URCON(QMainWindow):
 
 		self.connectui.triggered.connect(self.ConUi) # Открытие нового окна
 
-		self.log()
+		from setlang import SetLangEN, SetLangRU
+		self.setlangen.triggered.connect(SetLangEN)
+		self.setlangru.triggered.connect(SetLangRU)
 
-		self.conwin = conctwin.Connect() # Окно соеденения
+		self.log()
 
 		self.Stop()
 
@@ -63,16 +68,18 @@ class URCON(QMainWindow):
 
 				if sendcmd == empty + "stop":
 
-					self.textbrowser.append( 'Соеденение разорвано!' )
+					from setlang import ConnectionLost
+					self.textbrowser.append(ConnectionLost)
 
 		except:
-
-			self.textbrowser.append( 'Ошибка подключения!' )
+			from setlang import RconConnectionError
+			self.textbrowser.append(RconConnectionError)
 
 			self.lineEdit.clear() # Очистка текста после отправки
 
 	def ConUi(self):  # Открытие окна настроек
 
+		self.conwin = conctwin.Connect() # Окно соеденения
 		self.conwin.show()
 
 	def log(self):
