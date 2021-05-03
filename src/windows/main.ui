@@ -61,16 +61,34 @@
    </property>
    <widget class="QMenu" name="menurcon">
     <property name="title">
-     <string>rcon</string>
+     <string>Меню</string>
     </property>
     <addaction name="connectui"/>
    </widget>
+   <widget class="QMenu" name="langmenu">
+    <property name="title">
+     <string>Язык</string>
+    </property>
+    <addaction name="setlangen"/>
+    <addaction name="setlangru"/>
+   </widget>
    <addaction name="menurcon"/>
+   <addaction name="langmenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="connectui">
    <property name="text">
     <string>Подключиться</string>
+   </property>
+  </action>
+  <action name="setlangen">
+   <property name="text">
+    <string>en</string>
+   </property>
+  </action>
+  <action name="setlangru">
+   <property name="text">
+    <string>ru</string>
    </property>
   </action>
  </widget>
