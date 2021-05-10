@@ -5,7 +5,7 @@
 
 ## Вступление
 - [О программе URCON](#О-программе-URCON)
-- [Релизы](#Релизы)
+- [Релизы](#Releases)
 - [Запуск из исходников](#Запуск-из-исходников)
 - [Скриншоты](#Скриншоты)
 
@@ -21,18 +21,25 @@ Universal rcon client
 
 Эта программа использует модуль python https://github.com/conqp/rcon
 #
-## [Релизы](https://github.com/BlackCatDevel0per/URCON/releases)
+## [Releases](https://github.com/BlackCatDevel0per/URCON/releases)
 
 ## Запуск из исходников
 Запуск из исходного кода с помощью python3 urcon.py
 
 ## Introduction
 - [About URCON](#About-URCON)
+- [Realeses](#Releases)
 - [Run from source](#Run-from-source)
 - [Screenshots](#Скриншоты)
 
 ## About URCON
-Simple GUI rcon client for Minecraft servers!
+Simple GUI rcon client for Minecraft BE/PE! servers!
+
+#
+Verified on servers:
+ - Altay
+ - Nukkit
+ - Pocketmine
 
 This program uses the python module https://github.com/conqp/rcon
 
