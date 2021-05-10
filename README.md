@@ -33,7 +33,7 @@ Universal rcon client
 - [Screenshots](#Скриншоты)
 
 ## About URCON
-Simple GUI rcon client for Minecraft BE/PE! servers!
+Universal (GUI) rcon client for Minecraft BE/PE! servers!
 
 #
 Verified on servers:
