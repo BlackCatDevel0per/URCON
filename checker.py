@@ -66,7 +66,7 @@ def CheckAll():
 	CheckLanguageFile()
 	CheckSettings()
 	CheckLogsDir()
-# Проверка OS
+# Проверка OS (пока временная)
 try:
 	CheckAll()
 except:
