@@ -1,11 +1,18 @@
-import os
+import os, shutil
 
 def CheckAppDataDir():
 
+	current_dir = os.getcwd()
+	homedir = os.path.expanduser("~")
+	apppath_for_unix = '/.local/share/URCON/'
+
+	if not os.path.exists(homedir + apppath_for_unix + 'src'):
+		shutil.copytree(current_dir + '/src', homedir + apppath_for_unix + 'src')
+"""
 	if not os.path.exists("src"): # Ошибка при отцутствии ресурсов программы
 
 		print("Error! NO /src!!!")
-
+"""
 def CheckDataDir():
 
 	if not os.path.exists("src/data"):
@@ -44,7 +51,9 @@ def CheckSettings():
 
 		text_file.write("[SETTINGS]")
 
-		text_file.write("appversion = VERSION =)") # app version
+		from version import APP_VERSION
+
+		text_file.write("\nappversion = " + APP_VERSION) # app version
 
 		text_file.write("\nlogs = False") # logs
 
@@ -66,14 +75,23 @@ def CheckAll():
 	CheckLanguageFile()
 	CheckSettings()
 	CheckLogsDir()
-# Проверка OS (пока временная)
+# Проверка OS
 try:
 	CheckAll()
 except:
 	if os.name == 'posix':
-		pass
+		current_dir = os.getcwd()
+		home = os.path.expanduser("~")
+		apppath_unix = '/.local/share/URCON/'
+
+		if not os.path.exists(home + apppath_unix + 'src'): # проверка существования директории src в /.local/share
+			shutil.copytree(current_dir + '/src', homedir + apppath_for_unix + 'src') # копирование файлов в /.local/share/URCON
+
+		os.chdir(home + apppath_unix) # Смена директории программы
+		CheckAll()
+
 	if os.name == 'nt':
 		pf = 'C://Program Files (x86)/'
-		apppath = 'URCON/'
-		os.chdir(pf + apppath)
+		apppath_windows = 'URCON/'
+		os.chdir(pf + apppath_windows)
 		CheckAll()
