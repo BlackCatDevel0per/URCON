@@ -101,7 +101,7 @@ class Packet(NamedTuple):
         payload = await file.read(size - 10)
         terminator = await file.read(2)
 
-        if (terminator := terminator.decode()) != TERMINATOR:
+        if (terminator == terminator.decode()) != TERMINATOR:
             LOGGER.warning('Unexpected terminator: %s', terminator)
 
         return cls(id_, type_, payload.decode(), terminator)
