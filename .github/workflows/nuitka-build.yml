@@ -41,18 +41,22 @@ jobs:
           pip install -r requirements.txt
 
       # Build python script into a stand-alone exe
-      - uses: jimkring/python-script-to-exe@v0.2.0
+      - uses: Nuitka/Nuitka-Action@main
         with:
-          script-name: test.py
+          nuitka-version: main
+
+          script-name: urcon.py
           onefile: true
           standalone: true
           # TODO: Debug builds..
           disable-console: true
           # python-flag: '-O -S'
 
+          enable-plugins: pyside6
+
           # TODO: Icon, company & etc && more CI (& other) templates..
 
-          include-data-dir: src
+          include-data-dir: src=src
           
           
       # Uploads artifacts
