@@ -52,6 +52,8 @@ jobs:
           disable-console: true
           # python-flag: '-O -S'
 
+          enable-plugins: pyside6
+
           # TODO: Icon, company & etc && more CI (& other) templates..
 
           include-data-dir: src=src
