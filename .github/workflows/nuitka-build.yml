@@ -54,7 +54,7 @@ jobs:
 
           # TODO: Icon, company & etc && more CI (& other) templates..
 
-          include-data-dir: src
+          include-data-dir: src=src
           
           
       # Uploads artifacts
