@@ -1,44 +1,54 @@
-import sys
-from PyQt5 import uic
-from PyQt5.QtWidgets import (QMainWindow, QApplication)
+from __future__ import annotations
 
-from logzero import logger, logfile # Логирование
-###
-import checker # Проверка целостности
+from PySide6.QtUiTools import loadUiType
+from PySide6.QtWidgets import QApplication
 
-from client import Client # RCON
+from typing import TYPE_CHECKING
 
-import logging, logzero # Логирование
+import checker
 
-import connect as conctwin # Connect
+from setlang import SetMainWindowLang
+from setlang import SetLangEN, SetLangRU
+from client import Client
 
-import config # Config
+import logging
 
-import settings # Settings
+import connect as conctwin
 
-# Иконка окна взята из https://www.hiclipart.com/free-transparent-background-png-clipart-vrmjs
+import config
 
-### Инициализация главного окна
-class URCON(QMainWindow):
+import settings
+
+if TYPE_CHECKING:
+	from PySide6.QtWidgets import QMainWindow
+
+# Icon from https://www.hiclipart.com/free-transparent-background-png-clipart-vrmjs
+
+ui_cls: object
+base_cls: QMainWindow
+
+# TODO: On build package autouic.. (uis to code) Hmm..
+# TODO: More hints..
+ui_cls, base_cls = loadUiType('src/uis/main.ui')
+
+
+class URCON(ui_cls, base_cls):
 
 	def __init__(self):
 
-		super(URCON, self).__init__()
-		uic.loadUi('src/windows/main.ui', self)
-		self.show()
+		super().__init__()
 
-		from setlang import SetMainWindowLang
-		SetMainWindowLang(self) # Изменение языка
-		
-		self.pushButton.clicked.connect(self.Send) # Действие при нажатии на кнопку SEND
+		self.setupUi(self)
 
-		self.pushButton.setShortcut("Enter") # Действие при нажатии на Enter
+		self.show()  ##
 
-		self.lineEdit.returnPressed.connect(self.Send) # Действие при нажатии на Enter
+		SetMainWindowLang(self)
+		self.sendButton.clicked.connect(self.Send)
+		self.sendButton.setShortcut("Enter")
 
-		self.connectui.triggered.connect(self.ConUi) # Открытие нового окна
+		self.lineEdit.returnPressed.connect(self.Send)
+		self.connectui.triggered.connect(self.ConUi)
 
-		from setlang import SetLangEN, SetLangRU
 		self.setlangen.triggered.connect(SetLangEN)
 		self.setlangru.triggered.connect(SetLangRU)
 
@@ -46,25 +56,22 @@ class URCON(QMainWindow):
 
 		self.Stop()
 
-	def Send(self):
 
+	def Send(self: URCON) -> None:
 		try:
 
 			with Client(host = config.ip, port = config.prt, passwd = config.pswd) as client:
-
 				empty = " " # " " is for other servers
-
 				sendcmd = empty + self.lineEdit.text() # input cmd from text label
-
-				servcmd = client.run( sendcmd )
+				servcmd = client.run(sendcmd)
 
 				self.sendcmd = sendcmd
 
 				self.servcmd = servcmd
 
-				self.textbrowser.append( servcmd )
+				self.textbrowser.append(servcmd)
 
-				self.lineEdit.clear() # Очистка текста после отправки
+				self.lineEdit.clear()
 
 				if sendcmd == empty + "stop":
 
@@ -75,51 +82,50 @@ class URCON(QMainWindow):
 			from setlang import RconConnectionError
 			self.textbrowser.append(RconConnectionError)
 
-			self.lineEdit.clear() # Очистка текста после отправки
+			self.lineEdit.clear()
 
-	def ConUi(self):  # Открытие окна настроек
 
-		self.conwin = conctwin.Connect() # Окно соеденения
+	def ConUi(self) -> None:
+		##
+		self.conwin = conctwin.Connect()
 		self.conwin.show()
 
+
 	def log(self):
-
 		if settings.logs == "True":
+			return
 
-			self.pushButton.clicked.connect(self.logs) # Логгирование при нажатии на кнопку SEND
+		# self.sendButton.clicked.connect(self.logs)
 
-		else:
 
-			pass # Ничего :D
+	# def logs(self):
 
-	def logs(self):
+	# 	try:
 
-		try:
+	# 		logfile('logs/rcon.log', maxBytes=1000000, backupCount=3)
 
-			logfile('logs/rcon.log', maxBytes=1000000, backupCount=3)
+	# 		fmt = logging.Formatter('%(asctime)s: %(message)s');
 
-			# Установка форматирования
+	# 		logzero.formatter(fmt)
 
-			format = logging.Formatter('%(asctime)s: %(message)s');
+	# 		logger.info(self.sendcmd)
+	# 		logger.info(self.servcmd)
 
-			logzero.formatter(format)
+	# 	except:
 
-			logger.info( self.sendcmd ) # Лог команд пользователя
-
-			logger.info( self.servcmd ) # Лог команд с сервера
-
-		except:
-
-			pass
+	# 		pass
 
 	def Stop(self):
 
 		pass
 
+
 def main():
-
-	app = QApplication(sys.argv)
+	app = QApplication([])
 	window = URCON()
-	app.exec_()
+	window.show()
+	app.exec()
 
-main()
+
+if __name__ == '__main__':
+	main()

@@ -1,7 +1,11 @@
-import configparser, os, sys
-from PyQt5 import uic
+from __future__ import annotations
+
+import configparser
+
+from PySide6.QtUiTools import loadUiType
+
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QMainWindow, QFileDialog, QLineEdit)
+from PyQt5.QtWidgets import QFileDialog
 
 import about
 
@@ -9,31 +13,42 @@ import config
 
 import settings
 
-class Connect(QMainWindow):
+from typing import TYPE_CHECKING
 
+if TYPE_CHECKING:
+	from PySide6.QtWidgets import QWidget
+
+
+ui_cls: object
+base_cls: QWidget
+
+# TODO: On build package autouic.. (uis to code) Hmm..
+ui_cls, base_cls = loadUiType('src/uis/connect.ui')
+
+
+class Connect(ui_cls, base_cls):
+
+	# TODO: Fixed ui size & etc.
 	def __init__(self):
-		super(Connect, self).__init__()
-		uic.loadUi('src/windows/connect.ui', self)
+		super().__init__()
+
+		self.setupUi(self)
 
 		from setlang import SetConnectWindowLang
 		SetConnectWindowLang(self)
 
-		self.pushButton.clicked.connect(self.ConnectConfig)
+		self.acceptButton.clicked.connect(self.ConnectConfig)
+		self.acceptButton.clicked.connect(self.closewin)
 
-		self.pushButton.clicked.connect(self.closewin)
-
-		self.pushButton_2.clicked.connect(self.openlogsdir)
+		self.openLogsButton.clicked.connect(self.openlogsdir)
 
 		self.checkBox.stateChanged.connect(self.Settings)
 
 		self.toolButton.clicked.connect(self.About)
 
-		self.lineEdit_3.setEchoMode(QLineEdit.Password) # Спрятать пароль
-###
-		self.lineEdit.setText( config.ip )
-		self.lineEdit_2.setText( str( config.prt ) )
-		self.lineEdit_3.setText( config.pswd )
-###
+		self.lineEdit.setText(config.ip)
+		self.lineEdit_2.setText(str(config.prt))
+		self.lineEdit_3.setText(config.pswd)
 		if settings.logs == "True":
 
 			self.checkBox.setChecked(True)
@@ -42,7 +57,7 @@ class Connect(QMainWindow):
 
 			self.checkBox.setChecked(False)
 
-		self.aboutwin = about.About() # Окно о приложении
+		self.aboutwin = about.About()
 
 	def About(self):
 
@@ -54,8 +69,10 @@ class Connect(QMainWindow):
 
 		qfd = QFileDialog()
 		path = "logs/"
-		filter = "log(*.log)"
-		f = QFileDialog.getOpenFileName(qfd, title, path, filter)
+		fil = "log(*.log)"
+		##
+		QFileDialog.getOpenFileName(qfd, title, path, fil)
+
 
 	def ConnectConfig(self):
 

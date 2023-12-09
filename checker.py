@@ -16,7 +16,6 @@ def CheckAppDataDir():
 def CheckDataDir():
 
 	if not os.path.exists("src/data"):
-
 		os.mkdir("src/data")
 
 def CheckConf():
@@ -32,31 +31,26 @@ def CheckConf():
 		text_file.write("[DATA]")
 
 		text_file.write("\nip = " + sip )
-
 		text_file.write("\nprt = " + sprt)
-
 		text_file.write("\npswd = " + spswd )
 
 		conf.close()
+
 
 def CheckLanguageFile():
 	if not os.path.isfile("src/languages/en_us.ini"):
 		print("Language file not found")
 
+
 def CheckSettings():
-
 	if not os.path.isfile("src/data/settings.ini"):
-
 		conf = text_file = open("src/data/settings.ini", "w")
-
 		text_file.write("[SETTINGS]")
 
 		from version import APP_VERSION
 
 		text_file.write("\nappversion = " + APP_VERSION) # app version
-
 		text_file.write("\nlogs = False") # logs
-
 		text_file.write("\nlang = en_us") # language
 
 		conf.close()
@@ -92,6 +86,6 @@ except:
 
 	if os.name == 'nt':
 		pf = 'C://Program Files (x86)/'
-		apppath_windows = 'URCON/'
-		os.chdir(pf + apppath_windows)
+		apppath_uis = 'URCON/'
+		os.chdir(pf + apppath_uis)
 		CheckAll()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -27,6 +27,14 @@
    <locale language="Russian" country="Russia"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>221</width>
+     <height>271</height>
+    </rect>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="label">
@@ -83,6 +91,9 @@
       <property name="cursor">
        <cursorShape>IBeamCursor</cursorShape>
       </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
      </widget>
     </item>
     <item row="3" column="0" colspan="3">
@@ -110,7 +121,7 @@
      </widget>
     </item>
     <item row="4" column="0" colspan="2">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="openLogsButton">
       <property name="font">
        <font>
         <pointsize>8</pointsize>
@@ -122,7 +133,7 @@
      </widget>
     </item>
     <item row="4" column="2" colspan="2">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="acceptButton">
       <property name="font">
        <font>
         <pointsize>8</pointsize>
@@ -135,17 +146,16 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QStatusBar" name="statusbar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>221</width>
-     <height>34</height>
+     <width>3</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

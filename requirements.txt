@@ -1,5 +1,4 @@
 logger
-logzero
+pyside6
 requests
-#pyqt5 sudo apt install python3-pyqt5
 configparser
