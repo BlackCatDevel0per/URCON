@@ -4,8 +4,8 @@ import configparser
 
 from PySide6.QtUiTools import loadUiType
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QFileDialog
+from PySide6.QtCore.Qt import Checked as QtChecked
+from PySide6.QtWidgets import QFileDialog
 
 import about
 
@@ -95,7 +95,8 @@ class Connect(ui_cls, base_cls):
 
 		config2 = configparser.ConfigParser()
 
-		if toggle == Qt.Checked: # Turn on rcon logs
+		##
+		if toggle == QtChecked: # Turn on rcon logs
 
 			conf2 = "src/data/settings.ini"
 			config2.read(conf2)
