@@ -45,7 +45,7 @@ jobs:
         with:
           nuitka-version: main
 
-          script-name: test.py
+          script-name: urcon.py
           onefile: true
           standalone: true
           # TODO: Debug builds..
