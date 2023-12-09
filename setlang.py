@@ -1,8 +1,11 @@
 import configparser
 import settings
-import os
 
-config = configparser.ConfigParser()  # создаём объекта парсера
+# TODO: Remove this stuff..
+# TODO: Dynamically language change..
+
+config = configparser.ConfigParser()
+
 
 ##########
 def SetLangEN(self):
@@ -20,11 +23,11 @@ def SetLangRU(self):
 	config2.set("SETTINGS", "lang", "ru_ru")
 	config2.write(open(set_ru_conf, "w"))
 
-##########
-config.read("src/languages/en_us.ini")  # читаем конфиг
-#####
 
-def MWLang(self): # Замена текста
+config.read("src/languages/en_us.ini")
+
+
+def MWLang(self):
 	# English
 	self.EN_MainWindow_MENU = config["en_us"]["MainWindow_MENU"]
 	self.EN_MainWindow_SETLANGUAGE = config["en_us"]["MainWindow_SETLANGUAGE"]
@@ -36,6 +39,7 @@ def MWLang(self): # Замена текста
 	# Русский
 	self.RU_RconConnectionError = "Ошибка подключения!"
 	self.RU_ConnectionLost = 'Соеденение разорвано!'
+
 
 def MWSetLang(self):
 	global RconConnectionError, ConnectionLost
@@ -50,21 +54,24 @@ def MWSetLang(self):
 	else:
 		print("Ошибка! этого языка пока нет в этой программе")
 
+
 def SetMainWindowLangEN(self):
 	global RconConnectionError, ConnectionLost
 
 	self.menurcon.setTitle(self.EN_MainWindow_MENU)
 	self.langmenu.setTitle(self.EN_MainWindow_SETLANGUAGE)
-	self.pushButton.setText(self.EN_MainWindow_SEND)
+	self.sendButton.setText(self.EN_MainWindow_SEND)
 	self.connectui.setText(self.EN_MainWindow_Connect)
 	RconConnectionError = self.EN_MainWindow_ConnectionError
 	ConnectionLost = self.EN_ConnectionLost
+
 
 def SetMainWindowLang(self):
 	MWLang(self)
 	MWSetLang(self)
 
 #####
+
 
 def CWLang(self): ###
 	# English
@@ -74,6 +81,7 @@ def CWLang(self): ###
 	self.EN_ConnectWindow_EnableLogs_CheckBox = config["en_us"]["ConnectWindow_EnableLogs_CheckBox"]
 	self.EN_ConnectWindow_OpenLogs_Button = config["en_us"]["ConnectWindow_OpenLogs_Button"]
 
+
 def CWSetLang(self):
 
 	if settings.language == "en_us":
@@ -82,8 +90,10 @@ def CWSetLang(self):
 	elif settings.language == "ru_ru":
 		pass
 
+	##
 	else:
 		print("Ошибка! этого языка пока нет в этой программе")
+
 
 def SetConnectWindowLangEN(self):
 	self.setWindowTitle(self.EN_ConnectWindow_Title)
@@ -92,11 +102,13 @@ def SetConnectWindowLangEN(self):
 	self.checkBox.setText(self.EN_ConnectWindow_EnableLogs_CheckBox)
 	self.pushButton_2.setText(self.EN_ConnectWindow_OpenLogs_Button)
 
+
 def SetConnectWindowLang(self):
 	CWLang(self)
 	CWSetLang(self)
 
 #####
+
 
 def AWLang(self): ###
 	# English
@@ -104,6 +116,7 @@ def AWLang(self): ###
 	self.EN_AboutWindow_Developer = config["en_us"]["AboutWindow_Developer"]
 	self.EN_AboutWindow_IconFrom = config["en_us"]["AboutWindow_IconFrom"]
 	self.EN_AboutWindow_BugsReport = config["en_us"]["AboutWindow_BugsReport"]
+
 
 def AWSetLang(self):
 
@@ -116,11 +129,13 @@ def AWSetLang(self):
 	else:
 		print("Ошибка! этого языка пока нет в этой программе")
 
+
 def SetAboutWindowLangEN(self):
 	self.setWindowTitle(self.EN_AboutWindow_Title)
 	self.label.setText(self.EN_AboutWindow_Developer)
 	self.label_3.setText(self.EN_AboutWindow_IconFrom)
 	self.label_7.setText(self.EN_AboutWindow_BugsReport)
+
 
 def SetAboutWindowLang(self):
 	AWLang(self)
